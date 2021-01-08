@@ -54,17 +54,17 @@ class AccountSensor(
         elif ftype == "measurement":
             if self.sensor == "daysRemaining":
                 return None
-            elif self.sensor == "smsUsage":
-                return "$"
-            elif self.sensor == "mmsUsage":
-                return "$"
             elif self.sensor == "tierDataUsage":
                 return "kbs"
             elif self.sensor == "sharedTierDataUsage":
                 return "kbs"
         elif ftype == "attribute":
-            if self.sensor == "odometer":
-                return None
+            if self.sensor in ["sharedTierDataUsage", "tierVoiceUsage","tierDataUsage"] :
+                data = dict()
+                for key,value in self.coordinator.data[self.sensor].items():
+                   if key != "tiers":
+                     data[key] = value
+                return data
 
     @property
     def name(self):
