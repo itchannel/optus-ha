@@ -3,12 +3,12 @@ MOBILE = "mobile"
 
 
 SENSORS = {
-    "daysRemaining": {"icon": "mdi:counter"},
-    "smsUsage": {"icon": "mdi:gas-station"},
-    "mmsUsage": {"icon": "mdi:car-battery"},
-    "tierVoiceUsage": {"icon": "mdi:oil"},
-    "tierDataUsage": {"icon": "mdi:car-tire-alert"},
-    "sharedTierDataUsage": {"icon": "mdi:radar"},
-    "planName": {"icon": "mdi:bell"},
-    "billEndDate": {"icon": "hass:power"},
+    "daysRemaining": {"icon": "mdi:CalendarBlank"},
+    "smsUsage": {"icon": "mdi:Message"},
+    "mmsUsage": {"icon": "mdi:MessageImage"},
+    "tierVoiceUsage": {"icon": "mdi:Phone"},
+    "tierDataUsage": {"icon": "mdi:Database"},
+    "sharedTierDataUsage": {"icon": "mdi:Database"},
+    "planName": {"icon": "mdi:FileDocument"},
+    "billEndDate": {"icon": "mdi:CalendarToday"},
 }

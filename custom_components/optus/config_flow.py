@@ -31,7 +31,7 @@ async def validate_input(hass: core.HomeAssistant, data):
     account = Account(data[CONF_USERNAME], data[CONF_PASSWORD], data[MOBILE])
 
     try:
-        result = await hass.async_add_executor_job(Account.auth)
+        result = await hass.async_add_executor_job(account.auth)
 
     except Exception as ex:
         raise InvalidAuth from ex
@@ -79,3 +79,4 @@ class CannotConnect(exceptions.HomeAssistantError):
 
 class InvalidAuth(exceptions.HomeAssistantError):
     """Error to indicate there is invalid auth."""
+    _LOGGER.error("Failed to authenticate with optus")

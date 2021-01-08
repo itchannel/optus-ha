@@ -4,8 +4,8 @@ from datetime import timedelta
 from homeassistant.helpers.entity import Entity
 from homeassistant.util import Throttle
 
-from . import FordPassEntity
-from .const import CONF_UNIT, DOMAIN, SENSORS
+from . import OptusEntity
+from .const import  DOMAIN, SENSORS
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -37,9 +37,31 @@ class AccountSensor(
         if ftype == "state":
             if self.sensor == "daysRemaining":
                 return self.coordinator.data[self.sensor]
+            elif self.sensor == "smsUsage":
+                return self.coordinator.data[self.sensor]["amount"]
+            elif self.sensor == "mmsUsage":
+                return self.coordinator.data[self.sensor]["amount"]
+            elif self.sensor == "tierVoiceUsage":
+                return self.coordinator.data[self.sensor]["totalCharge"]
+            elif self.sensor == "tierDataUsage":
+                return self.coordinator.data[self.sensor]["totalDataUsed"]
+            elif self.sensor == "sharedTierDataUsage":
+                return self.coordinator.data[self.sensor]["totalDataUsed"]
+            elif self.sensor == "planName":
+                return self.coordinator.data[self.sensor]
+            elif self.sensor == "billEndDate":
+                return self.coordinator.data[self.sensor]
         elif ftype == "measurement":
             if self.sensor == "daysRemaining":
                 return None
+            elif self.sensor == "smsUsage":
+                return "$"
+            elif self.sensor == "mmsUsage":
+                return "$"
+            elif self.sensor == "tierDataUsage":
+                return "kbs"
+            elif self.sensor == "sharedTierDataUsage":
+                return "kbs"
         elif ftype == "attribute":
             if self.sensor == "odometer":
                 return None
