@@ -6,6 +6,7 @@
     "issue_tracker": "https://github.com/itchannel/optus-ha/issues",
     "requirements": ["dotted==0.1.8", "optus==0.0.1"],
     "ssdp": [],
+    "version": "0.0.1",
     "zeroconf": [],
     "homekit": {},
     "dependencies": [],
