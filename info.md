@@ -1,5 +1,8 @@
 # **Changelog**
 
+### Version 0.0.2
+- Updated manifest file for latest HA
+
 ### Version 0.0.1
 - Basic Plugin
 
